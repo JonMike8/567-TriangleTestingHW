@@ -26,7 +26,7 @@ def classifyTriangle(a,b,c):
       
       BEWARE: there may be a bug or two in this code
     """
-    # verify that all 3 inputs are integers  
+    # verify that all 3 inputs are integers
     # Python's "isinstance(object,type) returns True if the object is of the specified type
     if not(isinstance(a,int) and isinstance(b,int) and isinstance(c,int)):
         return 'InvalidInput'
@@ -34,18 +34,18 @@ def classifyTriangle(a,b,c):
     # require that the input values be >= 0 and <= 200
     if a > 200 or b > 200 or c > 200:
         return 'InvalidInput'
-        
+
     if a < 0 or b < 0 or c < 0:
         return 'InvalidInput'
-      
-    # This information was not in the requirements spec but 
+
+    # This information was not in the requirements spec but
     # is important for correctness
     # the sum of any two sides must be strictly GREATER than the third side
     # of the specified shape is not a triangle
     if (a >= (b + c)) or (b >= (a + c)) or (c >= (a + b)):
         return 'NotATriangle'
-        
-    # now we know that we have a valid triangle 
+
+    # now we know that we have a valid triangle
     if a == b and b == c and a == c:
         return 'Equilateral'
     elif ((a ** 2) + (b ** 2)) == (c ** 2):
@@ -60,7 +60,7 @@ def classifyTriangle(a,b,c):
 # Should move the checker for our values being integers above the checks of greater than 0 less
 # than 200.
 
-# line 34, the '=' symbols are unnecessary. 
+# line 34, the '=' symbols are unnecessary.
 
 # line 34, the if statement for 'b<=b' will always result in a return
 # of 'InvalidInput'
@@ -78,5 +78,5 @@ def classifyTriangle(a,b,c):
 
 # line 54, the logic for scalene triangles is wrong, last check should
 # be 'a!=c'
-    
+
 # line 57, Isosceles is spelled incorrectly
